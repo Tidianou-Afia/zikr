@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afia ZIKR</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="main">
+    <header>
+      <a href="../html/index.html"><img src="../images/images/img/background.png" class="logo"></a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="../html/about.html">About</a></li>
+        <li><a href="../html/programme.html">Programmes</a></li>
+        <li><a href="../html/videos.html">Vidéos</a></li>
+        <li><a href="../html/playlist.html">Playlist</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+        <li><a href="../index_login.html" id="logout">LogOut</a></li>
+
+      </ul>
+    </header>
+    <div id="container">
+    <div class="content">
+       <!-- <h1 style="font-size: 120px;color: white;margin: 10%; margin-left: 420px;width: 100vw;"><marquee behavior="" direction="">NO PROGRAM</marquee></h1> -->
+        <img src="../images_playlist/img/671870008a0e05d669c332fdec455b73.png" alt="" id="img_prog">
+      </div>
+    
+ 
+  </div></div>
+  
+  <script>
+    //toggle 
+    const menutoggle = document.querySelector('.toggle');
+    const navigation = document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+    //slider
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    i = 0;
+    
+    function ActiveSlide(n){
+      for(slide of slides)
+      slide.classList.remove('active');
+      slides[n].classList.add('active');
+    }
+
+    // function for next btn
+    next.addEventListener('click', function(){
+      if(i == slides.length - 1){
+        i = 0;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i++;
+        ActiveSlide(i);
+      }
+    })
+
+     // function for prev btn
+     prev.addEventListener('click', function(){
+      if(i == 0){
+        i = slides.length - 1;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i--;
+        ActiveSlide(i);
+      }
+    })
+  </script>
+</body>
+</html>
+  
+   
+</body>
+</html>

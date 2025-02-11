@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afia ZIKR</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../style_login.css">
+  
+</head>
+<body>
+  <div class="main">
+    <header>
+      <a href="../html/index.html"><img src="../images/images/img/background.png" class="logo"></a>
+      
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="../html/about.html">About</a></li>
+        <li><a href="../html/programme.html">Programmes</a></li>
+
+        <li><a href="../html/videos.html">Vidéos</a></li>
+        <li><a href="../html/playlist.html">Playlist</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+        <!-- <li><a href="../html/contact.html" id="logout">LogOut</a></li> -->
+        <li><a href="../index_login.html" id="logout">LogOut</a></li>
+
+
+      </ul>
+    </header>
+    <div class="content">
+      <div class="text">
+        <h2>Ndiogou<br>AFIA <span>Mbaye</span></h2>
+        <p>Découvrez l'univers Zikroullahi de Ndiogou Afia, 
+          baye fall engagé. Des chants zikroulah pour tous les moments de la vie : 
+          pour méditer, pour célébrer, pour se ressourcer. Écoutez, partagez et 
+          laissez-vous emporter par la beauté de la voix de l'Icône du zikr.</p>
+        <a href="../html/about.html" class="btn">About</a>
+      </div>
+      <div class="slider">
+        <div class="slides">
+          <img src="../images_playlist/img/VideoCapture_20241030-232129.jpg">
+        </div>
+        <div class="slides">
+          <img src="../images_playlist/img/VideoCapture_20241024-165930.jpg">
+        </div>
+        <div class="slides">
+          <img src="../images_playlist/img/Screenshot_20241012_115141_Snapchat.jpg">
+        </div>
+        <div class="slides active">
+          <img src="../images_playlist/img/Screenshot_20240617_200439_YouTube.jpg">
+        </div>
+        <div class="slides">
+          <img src="../images_playlist/img/VideoCapture_20241028-184640.jpg">
+        </div>
+        <div class="slides">
+          <img src="../images_playlist/img/VideoCapture_20241026-161910.jpg">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <ul class="sci">
+        <li><a href="#"><img src="../images//facebook.png" alt=""></a></li>
+        <li><a href="#"><img src="../images/instagram.png" alt=""></a></li>
+        <li><a href="#"><img src="../images/tic-tac.png" alt=""></a></li>
+        <li><a href="#"><img src="../images/twitter.png" alt=""></a></li>
+
+      </ul>
+      
+    </div>
+  </div>
+  <script src="../js/script.js"></script>
+  <script src="../js/menu.js"></script>
+  <script>
+  // toggle 
+  const menutoggle = document.querySelector('.toggle');
+  const navigation = document.querySelector('.navigation');
+  menutoggle.onclick = function(){
+    menutoggle.classList.toggle('active')
+    navigation.classList.toggle('active')
+  }
+
+  // slider
+  const slides = document.querySelectorAll('.slides');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+
+  let i = 0;
+
+  function ActiveSlide(n){
+    for (let slide of slides) {
+      slide.classList.remove('active');
+    }
+    slides[n].classList.add('active');
+  }
+
+  // // function for next btn
+  // next.addEventListener('click', function(){
+  //   if(i == slides.length - 1){
+  //     i = 0;
+  //     ActiveSlide(i);
+  //   } else {
+  //     i++;
+  //     ActiveSlide(i);
+  //   }
+  // });
+
+  // // function for prev btn
+  // prev.addEventListener('click', function(){
+  //   if(i == 0){
+  //     i = slides.length - 1;
+  //     ActiveSlide(i);
+  //   } else {
+  //     i--;
+  //     ActiveSlide(i);
+  //   }
+  // });
+
+  // Auto-slide function
+  function autoSlide() {
+    if(i == slides.length - 1) {
+      i = 0;
+    } else {
+      i++;
+    }
+    ActiveSlide(i);
+  }
+
+  // Set the interval to automatically slide every 3 seconds (3000ms)
+  setInterval(autoSlide, 500);
+</script>
+</body>
+</html>

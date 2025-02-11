@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFIA ZIKR</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style_playlist.css">
+  
+</head>
+<body>
+  <div class="main">
+    <header>
+      <a href="../html/index.html"><img src="../images/images/img/background.png" class="logo"></a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="../html/about.html">About</a></li>
+        <li><a href="../html/programme.html">Programmes</a></li>
+
+        <li><a href="../html/videos.html">Vidéos</a></li>
+        <li><a href="../html/playlist.html">Playlist</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+        <li><a href="../index_login.html" id="logout">LogOut</a></li>
+
+      </ul>
+    </header>
+    <div class="wrapper">
+      <a href="#"><img src="../images_playlist/img/pngtree-download-button-3d-green-logo-png-image_6740807.jpg" alt="" height="50" width="150"></a>
+        <div class="top-bar">
+        <h2 style="margin-left: 100px; color: white; text-decoration: underline;">Afia Zikr</h2>
+        </div>
+        <div class="img-area">
+            <img src="" alt="" >
+        </div>
+        <div class="song-details">
+            <p class="name"></p>
+            <p class="artist"></p>
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar">
+            </div>
+            <div class="timer">
+                <span class="current"></span>
+                <span class="duration"></span>
+            </div>
+            <audio src="" id="main-audio"></audio>
+        </div>
+        <div class="controls">
+          <img src="../images_playlist/icones/repeat_one_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="repeat_one" alt=""  height="50" width="50">
+          <img src="../images_playlist/icones/repeat_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="repeat" alt=""  height="50" width="50" title="Playlist looped">
+          <img src="../images_playlist/icones/skip_previous_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" style="cursor: pointer;" alt=""  height="50" width="50" id="prev">
+          <img src="../images_playlist/icones/pause_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" class="play-pause2"  id="pause" alt=""  height="50" width="50">
+           
+            <div class="play-pause">
+       <img src="../images_playlist/icones/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="" id="repeat-playlist"  height="50" width="50" onclick="">
+
+           </div>
+            <i id="repeat-playlist" class="material-icons"><img src="../images_playlist/icones/skip_next_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="next" alt=""  height="50" width="50" style="cursor: pointer;"></i>
+            <i id="repeat-playlist" class="material-icons"><img src="../images_playlist/img/pngtree-music-playlist-vector-icon-musical-note-and-list-vector-png-image_34961228.jpg" alt=""  height="25" width="30" id="more-music"></i>
+        </div>
+        <div class="music-list">
+            <div class="header">
+                <div class="row">
+                    <span>Music List</span>
+                </div>
+                <i id="close" class="material-icons"><img src="../images_playlist/icones/close.png" alt=""></i>
+            </div>
+        <ul>
+
+        </ul>
+    </div>
+    </div>
+   <script src="../js/script _playlist.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        //toggle 
+        const menutoggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+        menutoggle.onclick = function(){
+          menutoggle.classList.toggle('active')
+          navigation.classList.toggle('active')
+        }
+    
+        //slider
+        const slides = document.querySelectorAll('.slides');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+    
+        i = 0;
+        
+        function ActiveSlide(n){
+          for(slide of slides)
+          slide.classList.remove('active');
+          slides[n].classList.add('active');
+        }
+    
+        // function for next btn
+        next.addEventListener('click', function(){
+          if(i == slides.length - 1){
+            i = 0;
+            ActiveSlide(i);
+          }
+          else 
+          {
+            i++;
+            ActiveSlide(i);
+          }
+        })
+    
+         // function for prev btn
+         prev.addEventListener('click', function(){
+          if(i == 0){
+            i = slides.length - 1;
+            ActiveSlide(i);
+          }
+          else 
+          {
+            i--;
+            ActiveSlide(i);
+          }
+        })
+      </script>
+
+</body>
+</html>

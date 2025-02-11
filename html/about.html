@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFIA ZIKR</title>
+  <link rel="stylesheet" href="../css/style.css">
+  
+</head>
+<body>
+  <div class="main main_about">
+    <header>
+      <a href="../html/index.html"><img src="../images/images/img/background.png" class="logo"></a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="../html/about.html">About</a></li>
+        <li><a href="../html/programme.html">Programmes</a></li>
+
+        <li><a href="../html/videos.html">Vidéos</a></li>
+        <li><a href="../html/playlist.html">Playlist</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+        <li><a href="../index_login.html" id="logout">LogOut</a></li>
+
+      </ul>
+    </header>
+    <div class="content" id="about">
+
+      <div class="text_about">
+            <h2>
+                Diarama Mame Borrom Touba <br><br>
+                
+                Diarama Mame Cheikh Ibrahima Fall <br><br>
+                
+                Diarama Serigne Afia Mbacké sougnou Yakar tay ak Euleuk. <br><br>
+                
+                Je suis Ndiogou Afia , un humble serviteur de Serigne Afia Mbacké fallilou.
+                Découvrez mon univers Zikroullah, un mélange de tradition et de modernité, 
+                où la spiritualité rencontre la mélodie. Laissez-vous emporter par mes zikr. 
+                À travers mes chansons, j'aspire à toucher les cœurs et à rapprocher les 
+                hommes de Dieu.
+           </h2>
+      </div>
+      <div class="image">
+        <img src="../images/images/img/986bf7acacdc099576a575648f9a5304.png" id="afia">
+      </div>
+    </div>
+
+      <div class="footer">
+        <ul class="sci">
+          <li><a href="#"><img src="../images//facebook.png" alt=""></a></li>
+          <li><a href="#"><img src="../images/instagram.png" alt=""></a></li>
+          <li><a href="#"><img src="../images/tic-tac.png" alt=""></a></li>
+          <li><a href="#"><img src="../images/twitter.png" alt=""></a></li>
+  
+        </ul>
+      </div>
+  </div>
+  
+  <script>
+    //toggle 
+    const menutoggle = document.querySelector('.toggle');
+    const navigation = document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+    //slider
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    i = 0;
+    
+    function ActiveSlide(n){
+      for(slide of slides)
+      slide.classList.remove('active');
+      slides[n].classList.add('active');
+    }
+
+    // function for next btn
+    next.addEventListener('click', function(){
+      if(i == slides.length - 1){
+        i = 0;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i++;
+        ActiveSlide(i);
+      }
+    })
+
+     // function for prev btn
+     prev.addEventListener('click', function(){
+      if(i == 0){
+        i = slides.length - 1;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i--;
+        ActiveSlide(i);
+      }
+    })
+  </script>
+</body>
+</html>
+
+</body>
+</html>
